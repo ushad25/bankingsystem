@@ -1,8 +1,8 @@
 # bankingsystem
 
-import random
-accounts = {}
-def create_account():
+import random #This line imports the random module, which is used later to generate a random account number.
+accounts = {} #This dictionary will store information about each account
+def create_account()#This function prompts the user to enter their name and initial balance. It generates a random account number and creates a new entry in the accounts dictionary with this information.
     name = input("Enter your name: ")
     initial_balance = float(input("Enter initial balance: "))
     account_number = random.randint(1000, 9999)
@@ -15,7 +15,7 @@ def create_account():
     print(f"Account created successfully! Your account number is {account_number}")
 
 
-def login():
+def login():#This function allows a user to log in by entering their account number. If the account number exists in the accounts dictionary, it prints a welcome message; otherwise, it prompts the user to try again.
     account_number = int(input("Enter your account number: "))
 
     if account_number in accounts:
@@ -26,7 +26,7 @@ def login():
         return None
 
 
-def deposit(account_number):
+def deposit(account_number):#This function allows a logged-in user to deposit money into their account. It prompts the user to enter the deposit amount and updates the account balance accordingly.
     amount = float(input("Enter the deposit amount: "))
 
     if amount > 0:
@@ -36,7 +36,7 @@ def deposit(account_number):
         print("Invalid amount for deposit.")
 
 
-def withdraw(account_number):
+def withdraw(account_number):#Similar to the deposit function, this function allows a logged-in user to withdraw money from their account, provided the withdrawal amount is valid and there is enough balance.
     amount = float(input("Enter the withdrawal amount: "))
 
     if 0 < amount <= accounts[account_number]['balance']:
@@ -61,7 +61,9 @@ while True:
         create_account()
     elif choice == '2':
         account_number = login()
-        if account_number is not None:
+        if account_number is not None:#Menu Options:
+
+                                                      
             while True:
                 print("\nAccount Menu:")
                 print("1. Deposit")
@@ -89,9 +91,12 @@ while True:
     else:
         print("Invalid choice. Please enter a number between 1 and 5.")
 
+ # The menu options include:
+                                                       # Create Account (Choice 1): Calls the create_account function.
+                                                       # Login (Choice 2): Calls the login function and, if successful, displays a sub-menu for account-related actions.
+                                                       # Deposit (Choice 3): Prints a message to login first.
+                                                        #Withdraw (Choice 4): Prints a message to login first.
+                                                        #Exit (Choice 5): Exits the program.
 
-
-        ![image](https://github.com/ushad25/bankingsystem/assets/162864032/af7896bb-0b79-48f0-8ae5-50cb78451e21)
-        ![image](https://github.com/ushad25/bankingsystem/assets/162864032/617698f6-8959-4fe5-b6b1-2c1a90f3edfd)
-
+       
 
