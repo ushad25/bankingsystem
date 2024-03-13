@@ -1,8 +1,9 @@
 # bankingsystem
 
-import random #This line imports the random module, which is used later to generate a random account number.
-accounts = {} #This dictionary will store information about each account
-def create_account()#This function prompts the user to enter their name and initial balance. It generates a random account number and creates a new entry in the accounts dictionary with this information.
+import random 
+accounts = {}
+def create_account() 
+
     name = input("Enter your name: ")
     initial_balance = float(input("Enter initial balance: "))
     account_number = random.randint(1000, 9999)
@@ -15,7 +16,7 @@ def create_account()#This function prompts the user to enter their name and init
     print(f"Account created successfully! Your account number is {account_number}")
 
 
-def login():#This function allows a user to log in by entering their account number. If the account number exists in the accounts dictionary, it prints a welcome message; otherwise, it prompts the user to try again.
+def login():
     account_number = int(input("Enter your account number: "))
 
     if account_number in accounts:
@@ -26,7 +27,7 @@ def login():#This function allows a user to log in by entering their account num
         return None
 
 
-def deposit(account_number):#This function allows a logged-in user to deposit money into their account. It prompts the user to enter the deposit amount and updates the account balance accordingly.
+def deposit(account_number):
     amount = float(input("Enter the deposit amount: "))
 
     if amount > 0:
@@ -36,7 +37,7 @@ def deposit(account_number):#This function allows a logged-in user to deposit mo
         print("Invalid amount for deposit.")
 
 
-def withdraw(account_number):#Similar to the deposit function, this function allows a logged-in user to withdraw money from their account, provided the withdrawal amount is valid and there is enough balance.
+def withdraw(account_number):
     amount = float(input("Enter the withdrawal amount: "))
 
     if 0 < amount <= accounts[account_number]['balance']:
@@ -99,4 +100,13 @@ while True:
                                                         #Exit (Choice 5): Exits the program.
 
        
+#video file
+
+
+
+Uploading WhatsApp Video 2024-03-10 at 13.36.06_38f0732f.mp4…
+
+
+
+Uploading WhatsApp Video 2024-03-10 at 13.30.04_ece1994a.mp4…
 
